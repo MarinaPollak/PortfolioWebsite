@@ -1,0 +1,51 @@
+﻿@model PorfolioWebsite.Models.ResumeViewModel
+
+<div class="container mt-4">
+    <h1 class="text-center">@Model.Name</h1>
+    <p class="text-center"><strong>@Model.Title</strong></p>
+    <p class="text-center">@Model.Bio</p>
+
+    <hr />
+
+    <!-- Skills Section -->
+    <h2>Skills</h2>
+    <ul>
+        @foreach (var skill in Model.Skills)
+        {
+            <li>@skill</li>
+        }
+    </ul>
+
+    <hr />
+
+    <!-- Work Experience Section -->
+    <h2>Work Experience</h2>
+    @foreach (var job in Model.WorkExperience)
+    {
+        <div>
+            <h4>@job.JobTitle - <i>@job.Company</i></h4>
+            <p><strong>Duration:</strong> @job.Duration</p>
+            <p>@job.Description</p>
+        </div>
+    }
+
+    <hr />
+
+    <!-- Education Section -->
+    <h2>Education</h2>
+    @foreach (var education in Model.Education)
+    {
+        <div>
+            <h4>@education.Degree</h4>
+            <p>@education.Institution, @education.Year</p>
+        </div>
+    }
+
+    <hr />
+
+    <!-- Download Resume -->
+    <a href="/Marina_Pollak_Resume-compressed.pdf" class="btn btn-primary" download id="downloadButton" onclick="showDownloadMessage()">Download Resume</a>
+    <p id="downloadMessage" class="download-message" style="display: none;"></p>
+
+</div>
+

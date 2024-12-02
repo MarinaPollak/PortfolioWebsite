@@ -1,0 +1,18 @@
+﻿#project-details {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: auto;
+}
+.text-center-projects {
+    text-align: left;
+    font-family: "nunito", sans-serif;
+}
+
+#project-list {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: auto;
+}
+

@@ -1,0 +1,21 @@
+﻿/* Specific styles for the Index page */
+a.btn.btn-primary {
+    background-color: darkred;
+    color: white;
+    border: 1px solid darkred;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #220404;
+    text-align: center;
+    font-family: "nunito", sans-serif;
+}
+
+.para1 {
+    font-size: 18px;
+    line-height: 1.5;
+
+}

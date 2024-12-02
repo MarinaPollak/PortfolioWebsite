@@ -1,0 +1,95 @@
+/* Set the body and html to fill the viewport height */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Stack header, content, and footer */
+}
+
+h1 {
+    font-family: "nunito", sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+
+/* Content area that stretches to fill available space */
+.content {
+    flex: 1; /* Allow the content area to expand */
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Navbar */
+#main-page {
+    background-color: #ffffff !important;
+    padding-left: 50px;
+    padding-right: 10px;
+    padding-top: 20px;
+    font-family: "nunito", sans-serif;
+    font-weight: 200;
+}
+
+
+
+/* Footer styling */
+.footer {
+    background-color: #f8f9fa; /* Optional: Match your design */
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ensure the footer spans the full width */
+    border-top: 1px solid #ddd; /* Optional: Add a top border */
+    padding-bottom: 40px; /* Add space at the bottom */
+}
+
+.social-icons a {
+    color: darkred;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+    position: relative;
+    top: 5px;
+    bottom: 5px;
+    font-size: 12px;
+}
+
+    .social-icons a:hover {
+        color: #808080;
+    }
+
+.social-icons i {
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+/* Page-specific spacing */
+div .text-center {
+    margin-top: 150px;
+}
+
+.copy-portfolio {
+    margin-top: 30px; /* Add space above it */
+    font-size: 14px; /* Optional: Adjust font size if needed */
+    color: #555; /* Optional: Adjust the text color */
+}
+
+.btn-primary {
+    margin-bottom: 20px; /* Add space below the button */
+    background-color: darkred;
+    color: white;
+    border: 1px solid darkred;
+}
+
+.download-message {
+    height: 50px;
+    width: auto;
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px; /* Space between the button and the message */
+}
+
+

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PorfolioWebsite.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<h1 class="text-center-projects">My Projects</h1>
+
+<!-- List of project names -->
+<ul id="project-list">
+    @foreach (var project in Model)
+    {
+        <li class="project-name" data-name="@project.Name">@project.Name</li>
+    }
+</ul>
+
+<!-- Project details section -->
+<div id="project-details" class="project-details">
+    <h2 id="project-title">No Project Selected</h2>
+    <p id="project-description">Click on a project to see its details.</p>
+    <p id="project-author"></p>
+    <p id="project-type"></p>
+    <p id="project-date"></p>
+</div>
+
+<link rel="stylesheet" href="~/css/projects.css" asp-append-version="true" />
+<script src="~/js/site.js" asp-append-version="true"></script>
