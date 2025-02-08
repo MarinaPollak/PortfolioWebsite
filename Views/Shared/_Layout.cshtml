@@ -8,7 +8,9 @@
 
     <!-- FontAwesome icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
     <!-- Bootstrap 5.1.0 CSS -->
@@ -21,53 +23,68 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-page">
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")">My Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Projects", "Home")">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    </header>
-
-    <div class="content">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="footer bg-light text-center py-3">
-        <div class="container">
-            <p class="connect-with-me">Connect with me:</p>
-            <div class="social-icons">
-                <a href="https://github.com/yourusername" target="_blank" class="me-3"><i class="fab fa-github fa-2x"></i></a>
-                <a href="https://twitter.com/yourusername" target="_blank" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="https://www.instagram.com/yourusername" target="_blank" class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="https://www.behance.net/yourusername" target="_blank" class="me-3"><i class="fab fa-behance fa-2x"></i></a>
-            </div>
-            <p class="copy-portfolio">&copy; 2024 My Portfolio</p>
+    <div class="wrapper">
+        <!-- Flex container -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-page">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Projects", "Home")">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Illustration", "Home")">Illustrations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Reviews", "Home")">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Prices", "Home")">Prices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                </li>
+            </ul>
         </div>
-    </footer>
+    </nav>
+
+</header>
+
+<div class="main-content">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+        <footer class="footer bg-light text-center py-3">
+            <div class="container">
+                <p class="connect-with-me">lets connect</p>
+                <div class="social-icons">
+                    <a href="https://github.com/MarinaPollak" target="_blank" class="me-3"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/marina-pollak-programming-and-graphic-design/" target="_blank" class="me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="https://www.instagram.com/graphicelegance/" target="_blank" class="me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.behance.net/graphic-elegance" target="_blank" class="me-3"><i class="fab fa-behance fa-2x"></i></a>
+                </div>
+                <p class="copy-portfolio">&copy; 2024 byRembrandt</p>
+            </div>
+        </footer>
+    </div>
 <!-- Include Bootstrap dependencies -->
 
 <!-- Include Bootstrap dependencies -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
 
 
 

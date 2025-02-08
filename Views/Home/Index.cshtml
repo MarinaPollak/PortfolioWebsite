@@ -3,14 +3,19 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1>Welcome to My Portfolio</h1>
+<div class="text-center content">
+    <!-- Apply the Aurora Effect to the Title -->
+    <div id="parent">
+    <img id="memoji-image" src="images/SVG/Asset 1.svg"/>
+    <div id="square-blur"></div>
+    </div>
+    <h1 class="aurora-text">Creative Developer</h1>
     <p class="para1">Explore my projects and learn more about me.</p>
-    <a href="@Url.Action("About", "Home")" class="btn btn-primary">Enter</a>
+    <div class="button-background">
+        <a href="@Url.Action("About", "Home")" class="btn btn-primary">Enter</a>
+        </div>
 </div>
 
-<!-- Link to the page-specific CSS file -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+<!-- Link to CSS -->
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"> *@
 <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
-
-

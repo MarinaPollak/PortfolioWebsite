@@ -1,0 +1,105 @@
+﻿/* Set the body and html to fill the viewport height */
+html {
+    height: auto;
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Stack header, content, and footer */
+}
+
+
+body {
+    overflow-y: auto; /* Allow scrolling for taller content */
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Review Page Layout */
+.review-gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title {
+    color: #84A9FF;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12.5rem;
+    font-weight: 300;
+    position: relative;
+    top: 10px;
+    overflow: hidden;
+}
+
+/* Review Grid */
+.large-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Individual Review Card */
+.gallery-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+}
+
+    /* Hover Effects */
+    .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+/* Author Name */
+.review-author {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.review-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Star Ratings */
+.review-rating {
+    margin-top: 10px;
+    color: #FFD700; /* Gold Color for Stars */
+}
+
+    .review-rating i {
+        font-size: 1.2rem;
+        margin-right: 2px;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .large-box {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+}

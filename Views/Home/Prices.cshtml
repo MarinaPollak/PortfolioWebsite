@@ -1,21 +1,19 @@
-﻿@model IEnumerable<PorfolioWebsite.Models.Project>
+﻿@model IEnumerable<PorfolioWebsite.Models.Prices>
 
 <div class="container testimonial-gallery">
-    <h1 class="page-title">Projects</h1>
-    
+    <h1 class="page-title">Prices</h1>
+
     <!-- Large Box Container -->
     <div class="large-box" id="largeBox">
         @foreach (var item in Model)
         {
             <div class="gallery-card" onclick="openCard(this)">
+           
                 <div class="card-overlay">
-                    <h2>@item.Name</h2> 
-                    <p>@item.Description</p> 
-                    <p>@item.Author</p> 
-                    <p>@item.Type</p>
-                    <p>@item.DatePublished</p>
+                    <h2>@item.Title</h2>
+                    <p>@item.Description</p>
+                    <p>@item.Price</p>
                 </div>
-                <button class="close-btn" onclick="closeCard(event)">X</button>
             </div>
         }
     </div>
@@ -25,4 +23,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-<link rel="stylesheet" href="~/css/projects.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/prices.css" asp-append-version="true" />

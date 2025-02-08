@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PorfolioWebsite.Models.Illustration>
+
+<div class="illustration-container-override">
+    <h1 class="page-title">Illustration Gallery</h1>
+
+    <!-- Large Box Container -->
+    <div class="large-box" id="largeBox">
+        @foreach (var item in Model)
+        {<div class="gallery-card" onclick="openCard(this)">
+                <div id="image-frame1"></div>
+                <img src="@item.ImageUrl" alt="@item.Title" class="card-image"/>
+                <div id="image-frame2"></div>
+          
+                <div class="card-overlay">
+                    <h2>@item.Title</h2>
+                    <p>@item.Description</p>
+                </div>
+                <button class="like-btn" onclick="toggleLike(event)">
+                    <i class="far fa-heart"></i> <span class="like-count">0</span>
+                </button>
+                <button class="close-btn" onclick="closeCard(event)">X</button>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Include Bootstrap dependencies -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/css/illustration.css" asp-append-version="true" />

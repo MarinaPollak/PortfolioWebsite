@@ -1,21 +1,235 @@
-﻿/* Specific styles for the Index page */
+﻿html {
+    height: auto;
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Stack header, content, and footer */
+}
+
+
+body {
+    overflow-y: auto; /* Allow scrolling for taller content */
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.main-content {
+    flex: 1; /* Pushes the footer down */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#parent {
+   
+    position: relative; /* Makes the parent a positioned ancestor */
+    width: 100%;
+    height: auto;
+}
+
+    #memoji-image {
+        width: 180px;
+        height: auto;
+        position: relative; /* or absolute, fixed */
+        top: 55px; /* Offset on the y-axis */
+        left: 145px; /* Offset on the x-axis */
+    }
+
+    #square-blur {
+        background-color: white;
+        filter: blur(3px);
+        width: 100%;
+        height: 20px;
+        position: relative;
+        top: 40px; /* Offset on the y-axis */
+    }
+
+
 a.btn.btn-primary {
-    background-color: darkred;
-    color: white;
-    border: 1px solid darkred;
-    padding: 10px 20px;
-    margin-top: 10px;
-    text-transform: uppercase;
+    margin-top: 50px;
+    display: inline-block;
+    width: 20%;
+    background: linear-gradient(145deg, #D6E4FF 20%, #ADC8FF 80%); /* Gradient background */
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    color: #333;
+    box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.5), /* Inner glow */
+                inset -4px -4px 10px rgba(0, 0, 0, 0.1), /* Bottom shading */
+                3px 3px 10px rgba(0, 0, 0, 0.2); /* Outer drop shadow */
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
-h1 {
-    color: #220404;
+        a.btn.btn-primary:hover {
+            background-color: gray; /* Slightly darker on hover */
+            color: white;
+            box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.2), inset -8px -8px 15px rgba(255, 255, 255, 0.1); /* Inset effect on hover */
+            transform: scale(1.05); /* Slightly enlarge the button */
+        }
+
+
+    h1 {
+        color: #220404;
+        text-align: center;
+        font-family: "Montserrat", serif;
+    }
+
+div.text-center.content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 400px;
+}
+
+    .para1 {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+.footer {
+    background-color: #f8f9fa;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    font-family: "nunito", sans-serif;
+    width: 100%;
+    border-top: 0.5px solid #ddd;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-.para1 {
-    font-size: 18px;
-    line-height: 1.5;
-
+    /* Aurora Text Styling */
+.aurora-text {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 7rem;
+    letter-spacing: 1px;
+    text-align: center;
+    /*        background: radial-gradient(circle at bottom left, rgba(128, 0, 128, 0.7), rgba(186, 163, 194, 0.7), rgba(192, 152, 205, 0.7));*/
+    background: linear-gradient(120deg, rgba(214, 228, 255, 0.5), rgba(216,216, 216, 0.5), rgba(51, 102, 255, 0.9), rgba(214, 228, 255, 0.3), rgba(9, 26, 122, 0.3));
+    transform: translate(0, 0); /* Initial position */
+    background-size: 130% 100%; /* Make the gradient larger for animation */
+    transform: translate(0, 5); /* Initial position */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+    animation: aurora-text-move 3s infinite linear; /* Smooth scrolling effect */
+    /* 3D Perspective */
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
 }
+
+    /* Aurora Text Animation */
+    @keyframes aurora-text-move {
+        0% {
+            background-position: 0% 50%; /* Start position of gradient */
+        }
+
+        50% {
+            background-position: 100% 50%; /* Middle position of gradient */
+        }
+
+        100% {
+            background-position: 0% 50%; /* End position of gradient */
+        }
+    }
+
+    @media (max-width: 768px) {
+        div.content {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 20px;
+            background: transparent;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        div.text-center.content {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        #parent {
+            position: relative; /* Makes the parent a positioned ancestor */
+            width: 100%;
+            height: auto;
+        }
+
+        #memoji-image {
+            width: 200px;
+            height: auto;
+            opacity: 0.9;
+            position: relative; /* or absolute, fixed */
+            top: 25px; /* Offset on the y-axis */
+            left: 0px; /* Offset on the x-axis */
+        }
+
+        #square-blur {
+            position: absolute;
+            background-color: white;
+            filter: blur(3px);
+            width: 100%;
+            height: 15px;
+            top: 230px; /* Offset on the y-axis */
+            z-index: 1;
+        }
+
+
+        .aurora-text {
+            font-family: "Montserrat", serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 4rem;
+            letter-spacing: 1px;
+            text-align: center;
+            /*        background: radial-gradient(circle at bottom left, rgba(128, 0, 128, 0.7), rgba(186, 163, 194, 0.7), rgba(192, 152, 205, 0.7));*/
+            background: linear-gradient(120deg, rgba(214, 228, 255, 0.5), rgba(216,216, 216, 0.5), rgba(51, 102, 255, 0.9), rgba(214, 228, 255, 0.3), rgba(9, 26, 122, 0.3));
+            transform: translate(0, 0); /* Initial position */
+            background-size: 130% 100%; /* Make the gradient larger for animation */
+            transform: translate(0, 5); /* Initial position */
+            -webkit-background-clip: text; /* Clip the gradient to the text */
+            -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+            animation: aurora-text-move 3s infinite linear; /* Smooth scrolling effect */
+            /* 3D Perspective */
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Aurora Text Animation */
+        @keyframes aurora-text-move {
+            0% {
+                background-position: 0% 50%; /* Start position of gradient */
+            }
+
+            50% {
+                background-position: 100% 50%; /* Middle position of gradient */
+            }
+
+            100% {
+                background-position: 0% 50%; /* End position of gradient */
+            }
+        }
+
+        /* Specific styles for the Index page */
+        a.btn.btn-primary {
+            
+        }
+
+            a.btn.btn-primary:hover {
+                background-color: gray;
+            }
+    }

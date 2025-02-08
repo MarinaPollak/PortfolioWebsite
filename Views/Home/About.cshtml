@@ -1,51 +1,85 @@
 ﻿@model PorfolioWebsite.Models.ResumeViewModel
+<style type="text/css">.text-bio { }</style>
 
-<div class="container mt-4">
-    <h1 class="text-center">@Model.Name</h1>
-    <p class="text-center"><strong>@Model.Title</strong></p>
-    <p class="text-center">@Model.Bio</p>
+<div class="about-container-override">
+    <div class="about-grid">
+        <!-- ABOUT Title -->
+        <div class="grid-item about-title">
+            <h1 class="page-title">ABOUT</h1>
+        </div>
 
+        <!-- Name & Title Section -->
+        <div class="grid-item name-title">
+            <h1 class="text-center-name">@Model.Name</h1>
+            <p class="text-center-title"><strong>@Model.Title</strong></p>
+        </div>
+
+        <!-- Memoji Image with Blurred Background -->
+        <div class="grid-item image-container">
+            <img id="memoji-image" src="~/images/SVG/Asset 1.svg" alt="Memoji" />
+            <div id="square-blur"></div>
+        </div>
+
+        <!-- Bio Section -->
+        <div class="grid-item bio-container">
+            <div class="bio" id="bio">@Html.Raw(Model.Bio)</div>
+            <a href="#" class="read-more-btn" id="read-more-btn">Read More</a>
+        </div>
+    </div>
+
+   
+
+    <hr />
     <hr />
 
     <!-- Skills Section -->
-    <h2>Skills</h2>
-    <ul>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
         @foreach (var skill in Model.Skills)
         {
-            <li>@skill</li>
+            <div class="skill-card">@skill</div>
         }
-    </ul>
+    </div>
 
     <hr />
 
     <!-- Work Experience Section -->
-    <h2>Work Experience</h2>
-    @foreach (var job in Model.WorkExperience)
-    {
-        <div>
-            <h4>@job.JobTitle - <i>@job.Company</i></h4>
-            <p><strong>Duration:</strong> @job.Duration</p>
-            <p>@job.Description</p>
-        </div>
-    }
+    <h2 class="section-title">Work Experience</h2>
+    <div class="work-experience-grid">
+        @foreach (var job in Model.WorkExperience)
+        {
+            <div class="work-card">
+                <h4>@job.JobTitle - <i>@job.Company</i></h4>
+                <p><strong>Duration:</strong> @job.Duration</p>
+                <p>@job.Description</p>
+            </div>
+        }
+    </div>
 
     <hr />
 
     <!-- Education Section -->
-    <h2>Education</h2>
-    @foreach (var education in Model.Education)
-    {
-        <div>
-            <h4>@education.Degree</h4>
-            <p>@education.Institution, @education.Year</p>
-        </div>
-    }
+    <h2 class="section-title">Education</h2>
+    <div class="education-grid">
+        @foreach (var education in Model.Education)
+        {
+            <div class="education-card">
+                <h4>@education.Degree</h4>
+                <p>@education.Institution, @education.Year</p>
+            </div>
+        }
+    </div>
 
     <hr />
+
 
     <!-- Download Resume -->
     <a href="/Marina_Pollak_Resume-compressed.pdf" class="btn btn-primary" download id="downloadButton" onclick="showDownloadMessage()">Download Resume</a>
     <p id="downloadMessage" class="download-message" style="display: none;"></p>
-
 </div>
 
+
+<!-- Link to CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/css/About.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />

@@ -1,18 +1,188 @@
-﻿#project-details {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: auto;
-}
-.text-center-projects {
-    text-align: left;
-    font-family: "nunito", sans-serif;
+﻿
+/* Set the body and html to fill the viewport height */
+html {
+    height: auto;
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Stack header, content, and footer */
 }
 
-#project-list {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: auto;
+
+body {
+    overflow-y: auto; /* Allow scrolling for taller content */
 }
+
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Desktop Version */
+@media (min-width: 769px) {
+    .page-title {
+        color: #84A9FF;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12.5rem;
+        font-weight: 300;
+        text-align: left;
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+    }
+
+    .large-box {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        width: 73%;
+        height: 80vh;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        padding: 10px;
+        transition: all 0.5s ease; /* Smooth transition for card movement */
+    }
+
+
+
+    .gallery-card {
+        border: 1px black dashed;
+        padding: 20px;
+        position: relative;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.5s ease; /* Smooth scaling and movement */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Expanded State */
+        .gallery-card.expanded {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            border: 1px dashed black;
+            transition: all 0.5s ease;
+            background: #fff;
+        }
+        
+
+    .close-btn {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    .gallery-card.expanded .close-btn {
+        display: block; /* Show close button only in expanded view */
+    }
+}
+
+
+/* MOBILE VERSION */
+@media (max-width: 768px) {
+    /* Set the body and html to fill the viewport height */
+    html {
+        height: auto;
+        margin: 0; /* Remove default margins */
+        display: flex;
+        flex-direction: column; /* Stack header, content, and footer */
+    }
+
+    /* Ensure the main container remains scrollable */
+    body {
+        overflow-y: auto; /* Allow scrolling for taller content */
+    }
+
+    .close-btn {
+        display: none; /* Hidden by default */
+    }
+
+    .page-title {
+        color: #84A9FF;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 300;
+        text-align: center;
+        position: relative;
+        top: 10px;
+    }
+
+    .large-box {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        width: 100%;
+        left: 0%;
+        gap: 15px;
+        box-shadow: none;
+    }
+
+    .gallery-card {
+        width: 100%;
+        height: 400px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        box-shadow: none;
+        transition: none; /* Disable hover effects */
+        cursor: default; /* Remove pointer cursor */
+        transform: scale(1.05);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-overlay {
+        position: relative; /* Make overlay static */
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .gallery-card.expanded .close-btn {
+        display: none; /* Show close button only in expanded view */
+    }
+}
+
 

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Review>
+
+<div class="container review-gallery">
+    <h1 class="page-title">Reviews</h1>
+    <div class="large-box" id="largeBox">
+        @foreach (var review in Model)
+        {
+            <div class="gallery-card">
+                <div class="review-content">
+                    <h3 class="review-author">@review.Author</h3>
+                    <p class="review-text">"@review.Content"</p>
+                    <p class="review-rating">
+                        @for (int i = 0; i < review.Rating; i++)
+                        {
+                            <i class="fas fa-star"></i>
+                        }
+                        @for (int i = review.Rating; i < 5; i++)
+                        {
+                            <i class="far fa-star"></i>
+                        }
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<!-- Include Bootstrap dependencies -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/css/reviews.css" asp-append-version="true" />

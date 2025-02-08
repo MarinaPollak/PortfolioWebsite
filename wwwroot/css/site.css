@@ -1,20 +1,59 @@
+
+
+
 /* Set the body and html to fill the viewport height */
-html, body {
-    height: 100%;
+html {
+    height: auto;
     margin: 0; /* Remove default margins */
     display: flex;
     flex-direction: column; /* Stack header, content, and footer */
 }
 
-h1 {
-    font-family: "nunito", sans-serif;
-    font-weight: 400;
-    font-size: 2.5em;
-    margin-top: 0;
-    margin-bottom: 20px;
+/* Ensure the main container remains scrollable */
+body {
+    overflow-y: auto; /* Allow scrolling for taller content */
 }
 
 
+.page-title {
+    font-size: 6rem;
+    color: #3366FF;
+    font-weight: 900;
+    letter-spacing: 10px;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    z-index: 1;
+    margin: 0;
+}
+
+
+h1 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.connect-with-me {
+    color: #555;
+    font-family: "Dawning of a New Day", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+}
+/* The container wraps all content and stretches flexibly */
+.container {
+    flex: 1; /* Ensures the container stretches */
+    overflow-y: auto; /* Allows scrolling if content exceeds viewport */
+}
 
 /* Content area that stretches to fill available space */
 .content {
@@ -26,44 +65,18 @@ h1 {
 
 /* Navbar */
 #main-page {
-    background-color: #ffffff !important;
+    background-color: #fff !important;
     padding-left: 50px;
     padding-right: 10px;
     padding-top: 20px;
     font-family: "nunito", sans-serif;
-    font-weight: 200;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: #555;
 }
 
 
 
-/* Footer styling */
-.footer {
-    background-color: #f8f9fa; /* Optional: Match your design */
-    padding: 20px 0;
-    text-align: center;
-    width: 100%; /* Ensure the footer spans the full width */
-    border-top: 1px solid #ddd; /* Optional: Add a top border */
-    padding-bottom: 40px; /* Add space at the bottom */
-}
-
-.social-icons a {
-    color: darkred;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-    position: relative;
-    top: 5px;
-    bottom: 5px;
-    font-size: 12px;
-}
-
-    .social-icons a:hover {
-        color: #808080;
-    }
-
-.social-icons i {
-    vertical-align: middle;
-    padding-right: 20px;
-}
 
 /* Page-specific spacing */
 div .text-center {
@@ -78,9 +91,9 @@ div .text-center {
 
 .btn-primary {
     margin-bottom: 20px; /* Add space below the button */
-    background-color: darkred;
+    background-color: rgb(255, 69, 58);
     color: white;
-    border: 1px solid darkred;
+    border: 1px solid rgb(255, 69, 58);
 }
 
 .download-message {
@@ -92,4 +105,130 @@ div .text-center {
     margin-top: 10px; /* Space between the button and the message */
 }
 
+/* Base Footer Styling */
+footer.footer {
+    background-color: #fff !important;
+/*    background-color: black !important;*/
+    position: fixed; /* Required for positioning the ::before pseudo-element */
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    border-top: none; /* Remove border */
+    overflow: hidden; 
+}
 
+    /* Aurora Effect at the Bottom */
+    footer.footer::before {
+        content: "";
+        position: absolute;
+        bottom: -150px; /* Slightly outside the footer */
+        left: -100px; /* Extend further to the left */
+        width: 100%; /* Increase width to fully cover the left corner */
+        height: 200px; /* Height of the aurora */
+        background: radial-gradient(circle at bottom left, rgba(214, 228, 255, 0.5), rgba(214, 228, 255, 0.3), rgba(51, 102, 255, 0.9), rgba(214, 228, 255, 0.5), rgba(9, 26, 122, 0.1));
+        transform: translate(0, 0); /* Initial position */
+        filter: blur(40px); /* Add glow effect */
+        animation: footer-aurora 7s infinite ease-in-out; /* Smooth animation */
+        z-index: 1; /* Place above the footer background but below the content */
+        filter: blur(30px); /* Add glow effect */
+    }
+
+    /* Footer Content */
+    footer.footer .container {
+        position: relative; /* Make the container content layer above the ::before pseudo-element */
+        z-index: 2; /* Ensure all footer content is above the aurora effect */
+    }
+/* Aurora Animation */
+@keyframes footer-aurora {
+    0% {
+        transform: translate(-50px, 20px); /* Start slightly to the left and lower */
+    }
+
+    50% {
+        transform: translate(50px, -20px); /* Move slightly upward and to the right */
+    }
+
+    100% {
+        transform: translate(-50px, 20px); /* Return to the original position */
+    }
+}
+
+.copy-portfolio {
+    color: #fff;
+}
+
+/* Footer Icons */
+.social-icons a {
+    color: #D6E4FF; /* Default icon color */
+    margin-right: 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+    .social-icons a:hover {
+        color: #6690FF; /* Hover effect */
+    }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    /* Set the body and html to fill the viewport height */
+    html {
+        /*background-color: #fff !important;
+        /*    background-color: black;*/
+        /*height: 100%;
+        margin: 0; /* Remove default margins 
+        display: flex;
+        flex-direction: column; /* Stack header, content, and footer 
+        overflow-y: auto; /* Allow scrolling for taller content
+        color: #555;*/
+
+        height: auto;
+        margin: 0; /* Remove default margins */
+        display: flex;
+        flex-direction: column; /* Stack header, content, and footer */
+    }
+
+    /* Ensure the main container remains scrollable */
+    body {
+        overflow-y: auto; /* Allow scrolling for taller content */
+    }
+
+    .page-title {
+        transform: rotate(0); /* Make it horizontal */
+        position: static; /* Remove fixed positioning */
+        font-size: 4rem; /* Reduce font size */
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-align: center;
+        margin: 100px 0 0 0;
+    }
+
+    h1 {
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    
+
+    .copy-portfolio {
+        color: whitesmoke;
+    }
+
+    .about-container {
+        min-height: calc(100vh - 150px); /* Adjust based on your header and footer height */
+        padding-bottom: 20px; /* Add padding to avoid content overlapping the footer */
+    }
+
+   
+    /* Adjust the footer positioning */
+    footer.footer {
+        position: relative; /* Ensure it stays at the bottom of the content */
+    }
+}

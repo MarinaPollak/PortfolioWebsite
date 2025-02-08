@@ -1,0 +1,293 @@
+﻿/* Like Button */
+
+/* Set the body and html to fill the viewport height */
+html {
+    height: auto;
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column; /* Stack header, content, and footer */
+}
+
+/* Ensure the main container remains scrollable */
+body {
+    overflow-y: auto; /* Allow scrolling for taller content */
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.like-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: transparent;
+    color: #888;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.like-btn i {
+    margin-right: 5px;
+}
+
+.like-btn.liked {
+    color: red; /* Highlighted heart color */
+    transform: scale(1.2); /* Slight zoom-in effect */
+}
+
+.like-btn:hover {
+    color: darkred;
+}
+
+/* Adjusted for Mobile */
+@media (max-width: 768px) {
+    .like-btn {
+        bottom: 5px;
+        left: 5px;
+        font-size: 1rem;
+    }
+}
+
+.illustration-container-override {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #333;
+
+}
+/* Large Box for Desktop */
+.large-box {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+    grid-auto-rows: 115px; /* Row height */
+    gap: 5px;
+    width: 1200px;
+    height: 730px;
+    margin-right: 200px;
+    margin-left: -300px;
+    top: 100px;
+    left: 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+}
+
+
+.gallery-card:nth-child(1) {
+    grid-column: span 6; /* Item spans 4 columns */
+    grid-row: span 2; /* Item spans 2 columns */
+}
+
+.gallery-card:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 2; /* Taller box */
+}
+
+.gallery-card:nth-child(3) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.gallery-card:nth-child(4) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+
+
+
+
+/* Cards */
+.gallery-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .gallery-card img {
+/*        padding: 20px;*/
+        width: 50%;
+        height: auto;
+    }
+.card-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.gallery-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.gallery-card.expanded .close-btn {
+    display: block; /* Show close button only in expanded view */
+}
+
+/* Expanded Card (Desktop Only) */
+@media (min-width: 769px) {
+    
+    .page-title {
+        color: #84A9FF;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12.5rem;
+        font-weight: 300;
+        text-align: left;
+        position: relative;
+        top: 100px;
+        left: 20px;
+        overflow: hidden;
+    }
+    
+
+    .gallery-card.expanded {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        border: 1px dashed black;
+        transition: all 0.5s ease;
+        background: #fff;
+    }
+
+    
+/* Hover Effect */
+    .gallery-card:hover {
+        transform:scale(1);
+    }
+/*    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);*/
+
+
+    .close-btn {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    .gallery-card.expanded .close-btn {
+        display: block; /* Show close button only in expanded view */
+    }
+}
+
+/* MOBILE VERSION */
+@media (max-width: 768px) {
+
+    .illustration-container-override {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        color: #333;
+    }
+
+    .page-title {
+        color: #84A9FF;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 300;
+        text-align: center;
+        position: relative;
+        top: 10px;
+    }
+
+    .large-box {
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        margin:0px;
+        height: auto;
+        left:0%;
+        gap: 15px;
+        box-shadow: none;
+    }
+
+    .gallery-card {
+        width: 100%;
+        height: 500px;
+        margin-top:10px;
+        margin-bottom:5px;
+        border-radius: 10px;
+        box-shadow: none;
+        transition: none; /* Disable hover effects */
+        cursor: default; /* Remove pointer cursor */
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+        .gallery-card img {
+            width: 80%;
+            height: auto;
+        }
+
+    .card-overlay {
+        position: relative; /* Make overlay static */
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .gallery-card.expanded .close-btn {
+        display: none; /* Show close button only in expanded view */
+    }
+}
+
